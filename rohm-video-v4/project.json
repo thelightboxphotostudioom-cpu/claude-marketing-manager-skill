@@ -1,0 +1,506 @@
+{
+ "name": "دار الأوبرا السلطانية — v4",
+ "fps": 60,
+ "width": 1080,
+ "height": 1920,
+ "bpm": 116,
+ "beatsPerBar": 4,
+ "beatOffset": 0.31,
+ "palette": {
+  "bg": "#0D0A07",
+  "ink": "#F3E9D8",
+  "acc": "#C9A35C",
+  "clay": "#7E1822",
+  "hi": "#E8CF95",
+  "mut": "#9C8E78",
+  "onAcc": "#0D0A07"
+ },
+ "fonts": {
+  "display": "Cairo",
+  "body": "Cairo",
+  "num": "Inter"
+ },
+ "post": {
+  "grain": 0.03,
+  "vignette": 0.3
+ },
+ "images": {
+  "arcade_1": "assets/img/arcade_1.jpg",
+  "arcade_2": "assets/img/arcade_2.jpg",
+  "arcade_3": "assets/img/arcade_3.jpg",
+  "ext_day_1": "assets/img/ext_day_1.jpg",
+  "ext_day_2": "assets/img/ext_day_2.jpg",
+  "ext_night_1": "assets/img/ext_night_1.jpg",
+  "fort_1": "assets/img/fort_1.jpg",
+  "fort_2": "assets/img/fort_2.jpg",
+  "fort_3": "assets/img/fort_3.jpg",
+  "foyer_1": "assets/img/foyer_1.jpg",
+  "foyer_2": "assets/img/foyer_2.jpg",
+  "foyer_3": "assets/img/foyer_3.jpg",
+  "garden_1": "assets/img/garden_1.jpg",
+  "hall_1": "assets/img/hall_1.jpg",
+  "hall_2": "assets/img/hall_2.jpg",
+  "hall_3": "assets/img/hall_3.jpg",
+  "organ_1": "assets/img/organ_1.jpg",
+  "organ_2": "assets/img/organ_2.jpg",
+  "organ_3": "assets/img/organ_3.jpg",
+  "bl1": "assets/bl/bl_0001.jpg",
+  "bl2": "assets/bl/bl_0002.jpg",
+  "bl3": "assets/bl/bl_0003.jpg",
+  "bl4": "assets/bl/bl_0004.jpg",
+  "bl5": "assets/bl/bl_0005.jpg",
+  "bl6": "assets/bl/bl_0006.jpg",
+  "bl7": "assets/bl/bl_0007.jpg",
+  "bl8": "assets/bl/bl_0008.jpg",
+  "bl9": "assets/bl/bl_0009.jpg",
+  "bl10": "assets/bl/bl_0010.jpg",
+  "bl11": "assets/bl/bl_0011.jpg",
+  "bl12": "assets/bl/bl_0012.jpg",
+  "bl13": "assets/bl/bl_0013.jpg",
+  "bl14": "assets/bl/bl_0014.jpg",
+  "bl15": "assets/bl/bl_0015.jpg",
+  "bl16": "assets/bl/bl_0016.jpg",
+  "bl17": "assets/bl/bl_0017.jpg",
+  "bl18": "assets/bl/bl_0018.jpg",
+  "bl19": "assets/bl/bl_0019.jpg",
+  "bl20": "assets/bl/bl_0020.jpg",
+  "bl21": "assets/bl/bl_0021.jpg",
+  "bl22": "assets/bl/bl_0022.jpg",
+  "bl23": "assets/bl/bl_0023.jpg",
+  "bl24": "assets/bl/bl_0024.jpg",
+  "bl25": "assets/bl/bl_0025.jpg",
+  "bl26": "assets/bl/bl_0026.jpg",
+  "bl27": "assets/bl/bl_0027.jpg",
+  "bl28": "assets/bl/bl_0028.jpg",
+  "bl29": "assets/bl/bl_0029.jpg",
+  "bl30": "assets/bl/bl_0030.jpg",
+  "bl31": "assets/bl/bl_0031.jpg",
+  "bl32": "assets/bl/bl_0032.jpg",
+  "bl33": "assets/bl/bl_0033.jpg",
+  "bl34": "assets/bl/bl_0034.jpg",
+  "bl35": "assets/bl/bl_0035.jpg",
+  "bl36": "assets/bl/bl_0036.jpg",
+  "bl37": "assets/bl/bl_0037.jpg",
+  "bl38": "assets/bl/bl_0038.jpg",
+  "bl39": "assets/bl/bl_0039.jpg",
+  "bl40": "assets/bl/bl_0040.jpg",
+  "bl41": "assets/bl/bl_0041.jpg",
+  "bl42": "assets/bl/bl_0042.jpg",
+  "bl43": "assets/bl/bl_0043.jpg",
+  "bl44": "assets/bl/bl_0044.jpg",
+  "bl45": "assets/bl/bl_0045.jpg",
+  "bl46": "assets/bl/bl_0046.jpg",
+  "bl47": "assets/bl/bl_0047.jpg",
+  "bl48": "assets/bl/bl_0048.jpg",
+  "bl49": "assets/bl/bl_0049.jpg",
+  "bl50": "assets/bl/bl_0050.jpg",
+  "bl51": "assets/bl/bl_0051.jpg",
+  "bl52": "assets/bl/bl_0052.jpg",
+  "bl53": "assets/bl/bl_0053.jpg",
+  "bl54": "assets/bl/bl_0054.jpg",
+  "bl55": "assets/bl/bl_0055.jpg",
+  "bl56": "assets/bl/bl_0056.jpg",
+  "bl57": "assets/bl/bl_0057.jpg",
+  "bl58": "assets/bl/bl_0058.jpg",
+  "bl59": "assets/bl/bl_0059.jpg",
+  "bl60": "assets/bl/bl_0060.jpg",
+  "bl61": "assets/bl/bl_0061.jpg",
+  "bl62": "assets/bl/bl_0062.jpg",
+  "bl63": "assets/bl/bl_0063.jpg",
+  "bl64": "assets/bl/bl_0064.jpg",
+  "bl65": "assets/bl/bl_0065.jpg",
+  "bl66": "assets/bl/bl_0066.jpg",
+  "bl67": "assets/bl/bl_0067.jpg",
+  "bl68": "assets/bl/bl_0068.jpg",
+  "bl69": "assets/bl/bl_0069.jpg",
+  "bl70": "assets/bl/bl_0070.jpg",
+  "bl71": "assets/bl/bl_0071.jpg",
+  "bl72": "assets/bl/bl_0072.jpg",
+  "bl73": "assets/bl/bl_0073.jpg",
+  "bl74": "assets/bl/bl_0074.jpg",
+  "bl75": "assets/bl/bl_0075.jpg",
+  "bl76": "assets/bl/bl_0076.jpg",
+  "bl77": "assets/bl/bl_0077.jpg",
+  "bl78": "assets/bl/bl_0078.jpg",
+  "bl79": "assets/bl/bl_0079.jpg",
+  "bl80": "assets/bl/bl_0080.jpg",
+  "bl81": "assets/bl/bl_0081.jpg",
+  "bl82": "assets/bl/bl_0082.jpg",
+  "bl83": "assets/bl/bl_0083.jpg",
+  "bl84": "assets/bl/bl_0084.jpg",
+  "bl85": "assets/bl/bl_0085.jpg",
+  "bl86": "assets/bl/bl_0086.jpg",
+  "bl87": "assets/bl/bl_0087.jpg",
+  "bl88": "assets/bl/bl_0088.jpg",
+  "bl89": "assets/bl/bl_0089.jpg",
+  "bl90": "assets/bl/bl_0090.jpg",
+  "bl91": "assets/bl/bl_0091.jpg",
+  "bl92": "assets/bl/bl_0092.jpg",
+  "bl93": "assets/bl/bl_0093.jpg",
+  "bl94": "assets/bl/bl_0094.jpg",
+  "bl95": "assets/bl/bl_0095.jpg",
+  "bl96": "assets/bl/bl_0096.jpg",
+  "bl97": "assets/bl/bl_0097.jpg",
+  "bl98": "assets/bl/bl_0098.jpg",
+  "bl99": "assets/bl/bl_0099.jpg",
+  "bl100": "assets/bl/bl_0100.jpg",
+  "bl101": "assets/bl/bl_0101.jpg",
+  "bl102": "assets/bl/bl_0102.jpg",
+  "bl103": "assets/bl/bl_0103.jpg",
+  "bl104": "assets/bl/bl_0104.jpg",
+  "bl105": "assets/bl/bl_0105.jpg",
+  "bl106": "assets/bl/bl_0106.jpg",
+  "bl107": "assets/bl/bl_0107.jpg",
+  "bl108": "assets/bl/bl_0108.jpg",
+  "bl109": "assets/bl/bl_0109.jpg",
+  "bl110": "assets/bl/bl_0110.jpg",
+  "bl111": "assets/bl/bl_0111.jpg",
+  "bl112": "assets/bl/bl_0112.jpg",
+  "bl113": "assets/bl/bl_0113.jpg",
+  "bl114": "assets/bl/bl_0114.jpg",
+  "bl115": "assets/bl/bl_0115.jpg",
+  "bl116": "assets/bl/bl_0116.jpg",
+  "bl117": "assets/bl/bl_0117.jpg",
+  "bl118": "assets/bl/bl_0118.jpg",
+  "bl119": "assets/bl/bl_0119.jpg",
+  "bl120": "assets/bl/bl_0120.jpg",
+  "bl121": "assets/bl/bl_0121.jpg",
+  "bl122": "assets/bl/bl_0122.jpg",
+  "bl123": "assets/bl/bl_0123.jpg",
+  "bl124": "assets/bl/bl_0124.jpg",
+  "bl125": "assets/bl/bl_0125.jpg",
+  "bl126": "assets/bl/bl_0126.jpg",
+  "bl127": "assets/bl/bl_0127.jpg",
+  "bl128": "assets/bl/bl_0128.jpg",
+  "bl129": "assets/bl/bl_0129.jpg",
+  "bl130": "assets/bl/bl_0130.jpg",
+  "bl131": "assets/bl/bl_0131.jpg",
+  "bl132": "assets/bl/bl_0132.jpg",
+  "bl133": "assets/bl/bl_0133.jpg",
+  "bl134": "assets/bl/bl_0134.jpg",
+  "bl135": "assets/bl/bl_0135.jpg",
+  "bl136": "assets/bl/bl_0136.jpg",
+  "bl137": "assets/bl/bl_0137.jpg",
+  "bl138": "assets/bl/bl_0138.jpg",
+  "bl139": "assets/bl/bl_0139.jpg",
+  "bl140": "assets/bl/bl_0140.jpg",
+  "bl141": "assets/bl/bl_0141.jpg",
+  "bl142": "assets/bl/bl_0142.jpg",
+  "bl143": "assets/bl/bl_0143.jpg",
+  "bl144": "assets/bl/bl_0144.jpg",
+  "bl145": "assets/bl/bl_0145.jpg",
+  "bl146": "assets/bl/bl_0146.jpg",
+  "bl147": "assets/bl/bl_0147.jpg",
+  "bl148": "assets/bl/bl_0148.jpg",
+  "bl149": "assets/bl/bl_0149.jpg",
+  "bl150": "assets/bl/bl_0150.jpg",
+  "bl151": "assets/bl/bl_0151.jpg",
+  "bl152": "assets/bl/bl_0152.jpg",
+  "bl153": "assets/bl/bl_0153.jpg",
+  "bl154": "assets/bl/bl_0154.jpg",
+  "bl155": "assets/bl/bl_0155.jpg",
+  "bl156": "assets/bl/bl_0156.jpg",
+  "bl157": "assets/bl/bl_0157.jpg",
+  "bl158": "assets/bl/bl_0158.jpg",
+  "bl159": "assets/bl/bl_0159.jpg",
+  "bl160": "assets/bl/bl_0160.jpg",
+  "bl161": "assets/bl/bl_0161.jpg",
+  "bl162": "assets/bl/bl_0162.jpg",
+  "bl163": "assets/bl/bl_0163.jpg",
+  "bl164": "assets/bl/bl_0164.jpg",
+  "bl165": "assets/bl/bl_0165.jpg",
+  "bl166": "assets/bl/bl_0166.jpg",
+  "bl167": "assets/bl/bl_0167.jpg",
+  "bl168": "assets/bl/bl_0168.jpg",
+  "bl169": "assets/bl/bl_0169.jpg",
+  "bl170": "assets/bl/bl_0170.jpg",
+  "bl171": "assets/bl/bl_0171.jpg",
+  "bl172": "assets/bl/bl_0172.jpg",
+  "bl173": "assets/bl/bl_0173.jpg",
+  "bl174": "assets/bl/bl_0174.jpg",
+  "bl175": "assets/bl/bl_0175.jpg",
+  "bl176": "assets/bl/bl_0176.jpg",
+  "bl177": "assets/bl/bl_0177.jpg",
+  "bl178": "assets/bl/bl_0178.jpg",
+  "bl179": "assets/bl/bl_0179.jpg",
+  "bl180": "assets/bl/bl_0180.jpg",
+  "bl181": "assets/bl/bl_0181.jpg",
+  "bl182": "assets/bl/bl_0182.jpg",
+  "bl183": "assets/bl/bl_0183.jpg",
+  "bl184": "assets/bl/bl_0184.jpg",
+  "bl185": "assets/bl/bl_0185.jpg",
+  "bl186": "assets/bl/bl_0186.jpg",
+  "bl187": "assets/bl/bl_0187.jpg",
+  "bl188": "assets/bl/bl_0188.jpg",
+  "bl189": "assets/bl/bl_0189.jpg",
+  "bl190": "assets/bl/bl_0190.jpg",
+  "bl191": "assets/bl/bl_0191.jpg",
+  "bl192": "assets/bl/bl_0192.jpg",
+  "bl193": "assets/bl/bl_0193.jpg",
+  "bl194": "assets/bl/bl_0194.jpg",
+  "bl195": "assets/bl/bl_0195.jpg",
+  "bl196": "assets/bl/bl_0196.jpg",
+  "bl197": "assets/bl/bl_0197.jpg",
+  "bl198": "assets/bl/bl_0198.jpg",
+  "bl199": "assets/bl/bl_0199.jpg",
+  "bl200": "assets/bl/bl_0200.jpg"
+ },
+ "timing": {
+  "snap": "none",
+  "keepOriginal": true,
+  "leadIn": 0.0,
+  "gap": 0.0,
+  "startPad": 0.0,
+  "tail": 2.4
+ },
+ "music": {
+  "key": "D",
+  "scale": "minor",
+  "progression": [
+   0,
+   5,
+   3,
+   6
+  ],
+  "level": 4,
+  "duck": -5,
+  "top": {
+   "hat": 19,
+   "pluck": 7
+  }
+ },
+ "sections": [
+  {
+   "name": "build",
+   "at": 0
+  },
+  {
+   "name": "drop",
+   "at": "scene:s06"
+  },
+  {
+   "name": "break",
+   "at": "scene:s07"
+  },
+  {
+   "name": "build",
+   "at": "scene:s10"
+  },
+  {
+   "name": "drop",
+   "at": "scene:s16"
+  },
+  {
+   "name": "break",
+   "at": "scene:s18"
+  },
+  {
+   "name": "build",
+   "at": "scene:s21"
+  },
+  {
+   "name": "stop",
+   "at": 93.45
+  },
+  {
+   "name": "drop",
+   "at": "scene:s23"
+  },
+  {
+   "name": "outro",
+   "at": "scene:s27"
+  }
+ ],
+ "scenes": [
+  {
+   "id": "s01",
+   "file": "scenes/s01.js",
+   "lines": [
+    "l01"
+   ]
+  },
+  {
+   "id": "s02",
+   "file": "scenes/s02.js",
+   "lines": [
+    "l02"
+   ]
+  },
+  {
+   "id": "s03",
+   "file": "scenes/s03.js",
+   "lines": [
+    "l03"
+   ]
+  },
+  {
+   "id": "s04",
+   "file": "scenes/s04.js",
+   "lines": [
+    "l04"
+   ]
+  },
+  {
+   "id": "s05",
+   "file": "scenes/s05.js",
+   "lines": [
+    "l05"
+   ]
+  },
+  {
+   "id": "s06",
+   "file": "scenes/s06.js",
+   "lines": [
+    "l06"
+   ]
+  },
+  {
+   "id": "s07",
+   "file": "scenes/s07.js",
+   "lines": [
+    "l07"
+   ]
+  },
+  {
+   "id": "s08",
+   "file": "scenes/s08.js",
+   "lines": [
+    "l08"
+   ]
+  },
+  {
+   "id": "s09",
+   "file": "scenes/s09.js",
+   "lines": [
+    "l09"
+   ]
+  },
+  {
+   "id": "s10",
+   "file": "scenes/s10.js",
+   "lines": [
+    "l10"
+   ]
+  },
+  {
+   "id": "s11",
+   "file": "scenes/s11.js",
+   "lines": [
+    "l11"
+   ]
+  },
+  {
+   "id": "s12",
+   "file": "scenes/s12.js",
+   "lines": [
+    "l12"
+   ]
+  },
+  {
+   "id": "s13",
+   "file": "scenes/s13.js",
+   "lines": [
+    "l13"
+   ]
+  },
+  {
+   "id": "s14",
+   "file": "scenes/s14.js",
+   "lines": [
+    "l14"
+   ]
+  },
+  {
+   "id": "s15",
+   "file": "scenes/s15.js",
+   "lines": [
+    "l15"
+   ]
+  },
+  {
+   "id": "s16",
+   "file": "scenes/s16.js",
+   "lines": [
+    "l16"
+   ]
+  },
+  {
+   "id": "s17",
+   "file": "scenes/s17.js",
+   "lines": [
+    "l17",
+    "l18"
+   ]
+  },
+  {
+   "id": "s18",
+   "file": "scenes/s18.js",
+   "lines": [
+    "l19"
+   ]
+  },
+  {
+   "id": "s19",
+   "file": "scenes/s19.js",
+   "lines": [
+    "l20"
+   ]
+  },
+  {
+   "id": "s20",
+   "file": "scenes/s20.js",
+   "lines": [
+    "l21"
+   ]
+  },
+  {
+   "id": "s21",
+   "file": "scenes/s21.js",
+   "lines": [
+    "l22"
+   ]
+  },
+  {
+   "id": "s22",
+   "file": "scenes/s22.js",
+   "lines": [
+    "l23"
+   ]
+  },
+  {
+   "id": "s23",
+   "file": "scenes/s23.js",
+   "lines": [
+    "l24"
+   ]
+  },
+  {
+   "id": "s24",
+   "file": "scenes/s24.js",
+   "lines": [
+    "l25"
+   ]
+  },
+  {
+   "id": "s25",
+   "file": "scenes/s25.js",
+   "lines": [
+    "l26"
+   ]
+  },
+  {
+   "id": "s26",
+   "file": "scenes/s26.js",
+   "lines": [
+    "l27"
+   ]
+  },
+  {
+   "id": "s27",
+   "file": "scenes/s27.js",
+   "lines": [
+    "l28"
+   ]
+  }
+ ]
+}

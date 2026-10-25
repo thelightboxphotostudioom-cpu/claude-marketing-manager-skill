@@ -1,0 +1,18 @@
+{
+  "name": "دار الأوبرا السلطانية — v4",
+  "colors": {
+    "bg": "#0D0A07",
+    "gold": "#C9A35C",
+    "lightGold": "#E8CF95",
+    "ivory": "#F3E9D8",
+    "crimson": "#7E1822",
+    "desertRose": "#D8B49A"
+  },
+  "fonts": {
+    "royal": "Aref Ruqaa 700",
+    "kinetic": "Cairo 800-1000",
+    "numbers": "Inter 200-300"
+  },
+  "caption": { "font": "Cairo 900", "color": "#F3E9D8", "active": "#E8CF95", "y": 1390, "words": "2-4" },
+  "motion": { "bounce": false }
+}

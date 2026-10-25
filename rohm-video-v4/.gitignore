@@ -1,0 +1,10 @@
+# renders, frames and regenerable binaries
+renders/
+/vo/
+assets/bl/
+assets/img/
+assets/photos/*.jpg
+!assets/photos/contact.jpg
+blender/hero/
+blender/test/
+__pycache__/
