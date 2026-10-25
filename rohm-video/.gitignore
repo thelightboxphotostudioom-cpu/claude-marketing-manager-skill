@@ -1,0 +1,6 @@
+renders/frames*/
+renders/preview/
+renders/audio/
+vo/_*
+renders/
+vo/*.wav

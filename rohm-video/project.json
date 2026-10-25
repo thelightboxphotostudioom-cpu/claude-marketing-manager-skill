@@ -1,0 +1,233 @@
+{
+ "name": "دار الأوبرا السلطانية مسقط",
+ "fps": 60,
+ "width": 1080,
+ "height": 1920,
+ "bpm": 60,
+ "beatsPerBar": 4,
+ "beatOffset": 0,
+ "palette": {
+  "bg": "#0D0A07",
+  "ink": "#F3E9D8",
+  "acc": "#C9A35C",
+  "clay": "#7E1822",
+  "hi": "#E8CF95",
+  "mut": "#9C8E78"
+ },
+ "fonts": {
+  "display": "Aref Ruqaa",
+  "body": "Noto Kufi Arabic",
+  "num": "Inter"
+ },
+ "post": {
+  "grain": 0.035,
+  "vignette": 0.35
+ },
+ "timing": {
+  "snap": "none",
+  "keepOriginal": true,
+  "leadIn": 0.3,
+  "gap": 0.1,
+  "startPad": 0.15,
+  "tail": 0.9
+ },
+ "scenes": [
+  {
+   "id": "s1",
+   "file": "scenes/s1.js",
+   "lines": [
+    "l1"
+   ]
+  },
+  {
+   "id": "s2",
+   "file": "scenes/s2.js",
+   "lines": [
+    "l2"
+   ],
+   "transition": {
+    "type": "iris",
+    "dur": 0.7,
+    "color": "#C9A35C"
+   }
+  },
+  {
+   "id": "s3",
+   "file": "scenes/s3.js",
+   "lines": [
+    "l3"
+   ],
+   "transition": {
+    "type": "dip",
+    "dur": 0.6,
+    "color": "#000000"
+   }
+  },
+  {
+   "id": "s4",
+   "file": "scenes/s4.js",
+   "lines": [
+    "l4"
+   ],
+   "transition": {
+    "type": "crossfade",
+    "dur": 0.6
+   }
+  },
+  {
+   "id": "s5",
+   "file": "scenes/s5.js",
+   "lines": [
+    "l5"
+   ],
+   "transition": {
+    "type": "wipe",
+    "dur": 0.7,
+    "dir": "rtl",
+    "bar": 4,
+    "color": "#C9A35C"
+   }
+  },
+  {
+   "id": "s6",
+   "file": "scenes/s6.js",
+   "lines": [
+    "l6"
+   ],
+   "transition": {
+    "type": "wipe",
+    "dur": 0.7,
+    "dir": "rtl",
+    "bar": 4,
+    "color": "#C9A35C"
+   }
+  },
+  {
+   "id": "s7",
+   "file": "scenes/s7.js",
+   "lines": [
+    "l7"
+   ]
+  },
+  {
+   "id": "s8",
+   "file": "scenes/s8.js",
+   "lines": [
+    "l8"
+   ],
+   "transition": {
+    "type": "crossfade",
+    "dur": 0.5
+   }
+  },
+  {
+   "id": "s9",
+   "file": "scenes/s9.js",
+   "lines": [
+    "l9"
+   ],
+   "transition": {
+    "type": "dip",
+    "dur": 0.7,
+    "color": "#000000"
+   }
+  },
+  {
+   "id": "s10",
+   "file": "scenes/s10.js",
+   "lines": [
+    "l10"
+   ]
+  },
+  {
+   "id": "s11",
+   "file": "scenes/s11.js",
+   "lines": [
+    "l11"
+   ],
+   "transition": {
+    "type": "wipe",
+    "dur": 0.7,
+    "dir": "up",
+    "bar": 4,
+    "color": "#C9A35C"
+   }
+  },
+  {
+   "id": "s12",
+   "file": "scenes/s12.js",
+   "lines": [
+    "l12"
+   ],
+   "transition": {
+    "type": "dip",
+    "dur": 0.7,
+    "color": "#000000"
+   }
+  },
+  {
+   "id": "s13",
+   "file": "scenes/s13.js",
+   "lines": [
+    "l13"
+   ]
+  },
+  {
+   "id": "s14",
+   "file": "scenes/s14.js",
+   "lines": [
+    "l14"
+   ],
+   "transition": {
+    "type": "iris",
+    "dur": 0.7,
+    "color": "#C9A35C"
+   }
+  },
+  {
+   "id": "s15",
+   "file": "scenes/s15.js",
+   "lines": [
+    "l15",
+    "l16"
+   ],
+   "transition": {
+    "type": "wipe",
+    "dur": 0.7,
+    "dir": "rtl",
+    "bar": 4,
+    "color": "#C9A35C"
+   }
+  },
+  {
+   "id": "s16",
+   "file": "scenes/s16.js",
+   "lines": [
+    "l17"
+   ]
+  },
+  {
+   "id": "s17",
+   "file": "scenes/s17.js",
+   "lines": [
+    "l18"
+   ],
+   "transition": {
+    "type": "crossfade",
+    "dur": 0.6
+   }
+  },
+  {
+   "id": "s18",
+   "file": "scenes/s18.js",
+   "lines": [
+    "l19"
+   ],
+   "transition": {
+    "type": "dip",
+    "dur": 0.8,
+    "color": "#000000"
+   }
+  }
+ ]
+}
