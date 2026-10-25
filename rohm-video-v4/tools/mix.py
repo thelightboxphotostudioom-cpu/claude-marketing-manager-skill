@@ -92,7 +92,7 @@ if A.music:
     hp = signal.butter(4, 200, 'hp', fs=SR, output='sos')
     gap_now = rms_db(signal.sosfilt(hp, vo[speech > 0.5], axis=0)) - rms_db(signal.sosfilt(hp, bed[speech > 0.5], axis=0))
     bed *= db(gap_now - A.music_gap)                                    # bed sits music-gap dB under speech (>200 Hz)
-    bed *= (db(-7) + (1 - db(-7)) * (1 - speech))[:, None]               # extra 7 dB duck during speech, back up between lines
+    bed *= (db(-4) + (1 - db(-4)) * (1 - speech))[:, None]               # extra 4 dB duck during speech, back up between lines
 
 mix = vo + sfx + bed
 ea.write_wav('renders/audio/mix_samples.wav', mix)
