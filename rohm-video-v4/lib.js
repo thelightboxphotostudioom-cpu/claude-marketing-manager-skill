@@ -260,8 +260,9 @@ export const T = {
 /* ── burned-in captions (2–4 words, active word gold), drawn over every frame ── */
 let CAP = null;
 const PUN = /[…،,\.:؛!]+$/u;
-function buildChunks(vo) {
-  const all = []; Object.values(vo).sort((a, b) => a.start - b.start).forEach(L => L.words.forEach(w => all.push({ ...w })));
+function buildChunks(vo, flat) {   // flat: optional [{w,s,e}] (English version) instead of the VO lines
+  const all = flat ? flat.map(w => ({ ...w })) : [];
+  if (!flat) Object.values(vo).sort((a, b) => a.start - b.start).forEach(L => L.words.forEach(w => all.push({ ...w })));
   const out = []; let cur = [];
   const push = () => { if (cur.length) out.push(cur); cur = []; };
   all.forEach((w, i) => {
@@ -273,15 +274,37 @@ function buildChunks(vo) {
   return out.map((c, i) => ({ words: c, s: c[0].s - 0.06, e: out[i + 1] ? Math.min(out[i + 1][0].s - 0.06, c[c.length - 1].e + 0.6) : c[c.length - 1].e + 0.5 }));
 }
 export function installCaptions(ctx, o = {}) {
-  if (CAP) return; CAP = { ctx, chunks: buildChunks(ctx.vo), y: o.y || 1390, size: o.size || 76 };
+  if (CAP) return; CAP = { ctx, chunks: buildChunks(ctx.vo, ctx.project.captionWords), y: o.y || 1390, size: o.size || 76 };
   const M = window.MOTION, OUT = document.getElementById('out'), OX = OUT.getContext('2d');
   M.frameData = (t, type = 'image/jpeg', q = 0.95) => { M.renderFrame(t); drawCaptions(OX, t); return OUT.toDataURL(type, q); };
 }
 export function captionHidden(fn) { if (CAP) CAP.hidden = fn; }
+// English captions: left-to-right word layout (the Arabic layout would reorder "500-ton"), wraps to two lines
+function drawCaptionsLTR(X, t, c) {
+  const { ctx, y } = CAP, size = 70, kin = eo(pr(t, c.s, c.s + 0.16)), kout = pr(t, c.e - 0.08, c.e);
+  X.font = ctx.font('Inter', 800, size); X.direction = 'ltr'; X.textAlign = 'left'; X.textBaseline = 'alphabetic'; X.lineJoin = 'round';
+  const sp = X.measureText(' ').width * 1.35, ws = c.words.map(w => X.measureText(w.w).width), lines = [[]]; let lw = 0;
+  ws.forEach((w, i) => { if (lines[lines.length - 1].length && lw + sp + w > 780) { lines.push([]); lw = 0; } lw += (lines[lines.length - 1].length ? sp : 0) + w; lines[lines.length - 1].push(i); });
+  let cur = 0; c.words.forEach((w, i) => { if (t >= w.s - 0.04) cur = i; });
+  lines.forEach((li, r) => {
+    const width = li.reduce((a, i, j) => a + ws[i] + (j ? sp : 0), 0); let x = 520 - width / 2;
+    const yy = y - (lines.length - 1) * size * 0.58 + r * size * 1.16 + (1 - kin) * 16;
+    li.forEach(i => {
+      const w = c.words[i], k = eo(pr(t, w.s - 0.06, w.s + 0.1)), on = i === cur;
+      X.save(); X.globalAlpha = k * kin * (1 - kout);
+      if (on) { X.translate(x + ws[i] / 2, yy - size * 0.35); X.scale(1.06, 1.06); X.translate(-(x + ws[i] / 2), -(yy - size * 0.35)); }
+      X.shadowColor = 'rgba(0,0,0,.7)'; X.shadowBlur = 16; X.shadowOffsetY = 5;
+      X.lineWidth = size * 0.15; X.strokeStyle = 'rgba(8,6,4,.92)'; X.strokeText(w.w, x, yy);
+      X.shadowColor = 'transparent'; X.fillStyle = on ? C.lg : C.ivory; X.fillText(w.w, x, yy);
+      X.restore(); x += ws[i] + sp;
+    });
+  });
+}
 function drawCaptions(X, t) {
   const { ctx, chunks, y, size } = CAP; if (CAP.hidden && CAP.hidden(t)) return;
   const c = chunks.find(c => t >= c.s && t < c.e); if (!c) return;
   X.save(); ctx.resetTransform(X);
+  if (ctx.project.captionWords) { drawCaptionsLTR(X, t, c); X.restore(); return; }
   const str = c.words.map(w => w.w).join(' '), L = lay(ctx, X, str, { family: 'Cairo', weight: 900, size, maxWidth: 760, lineHeight: 1.12 });
   const kin = eo(pr(t, c.s, c.s + 0.16)), kout = pr(t, c.e - 0.08, c.e);
   let cur = 0; c.words.forEach((w, i) => { if (t >= w.s - 0.04) cur = i; });

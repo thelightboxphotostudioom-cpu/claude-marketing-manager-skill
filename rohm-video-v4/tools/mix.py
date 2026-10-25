@@ -11,7 +11,8 @@ LIB = 'C:/Users/MSI/Downloads/خلفات موسيقيه ومؤثرات/مؤثر�
 EL = 'assets/sfx_el'
 ENGINE = 'C:/Users/MSI/AppData/Local/Packages/Claude_pzs8sxrjxfjjc/LocalCache/Roaming/Claude/rpm/f2deddd8/82689797/plugin_01WQmCvfZgaf4Xa4pV16NuUz/video-ad-editor/motion'
 ap = argparse.ArgumentParser(); ap.add_argument('--music'); ap.add_argument('--music-gap', type=float, default=16.0)
-ap.add_argument('--out', default='renders/final.mp4'); A = ap.parse_args()
+ap.add_argument('--out', default='renders/final.mp4'); ap.add_argument('--vo', default='vo/vo_full.wav')
+ap.add_argument('--words', help='flat [{w,s,e}] json for the speech envelope (English VO)'); ap.add_argument('--video', default='renders/video.mp4'); A = ap.parse_args()
 
 def load(p):
     raw = subprocess.run(['ffmpeg', '-v', 'error', '-i', p, '-ac', '2', '-ar', str(SR), '-f', 'f32le', '-'], capture_output=True, check=True).stdout
@@ -58,13 +59,13 @@ spec = importlib.util.spec_from_file_location('engine_audio', f'{ENGINE}/audio.p
 tl = json.load(open('timeline.json', encoding='utf-8')); N = int(tl['duration'] * SR) + SR
 
 # ── voice: high-pass, presence lift, gentle compression (ffmpeg) ──
-subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', 'vo/vo_full.wav', '-af',
+subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', A.vo, '-af',
                 'highpass=f=80,equalizer=f=3200:t=q:w=1.2:g=2.5,equalizer=f=250:t=q:w=1:g=-1.5,acompressor=threshold=-22dB:ratio=3:attack=8:release=120:makeup=3dB',
                 '-ar', str(SR), '-ac', '2', 'renders/audio/vo_proc.wav'], check=True)
 vo = load('renders/audio/vo_proc.wav')[:N]; vo = np.pad(vo, ((0, N - len(vo)), (0, 0)))
 speech = np.zeros(N)
-for line in tl['vo']:
-    for w in line['words']: speech[int(w['s'] * SR):int(w['e'] * SR)] = 1
+WORDS = json.load(open(A.words, encoding='utf-8')) if A.words else [w for line in tl['vo'] for w in line['words']]
+for w in WORDS: speech[int(w['s'] * SR):int(w['e'] * SR)] = 1
 k = signal.windows.hann(int(0.25 * SR)); speech = np.clip(signal.convolve(speech, k / k.sum() * 3, 'same'), 0, 1)   # smooth envelope
 vo_ref = rms_db(vo[speech > 0.5])
 
@@ -100,7 +101,7 @@ ea.write_wav('renders/audio/mix_samples.wav', mix)
 r = subprocess.run(['ffmpeg', '-hide_banner', '-i', 'renders/audio/mix_samples.wav', '-af', 'loudnorm=I=-14:TP=-1.5:LRA=11:print_format=json', '-f', 'null', '-'], capture_output=True, text=True).stderr
 js = json.loads(r[r.rindex('{'):r.rindex('}') + 1])
 ln = f"loudnorm=I=-14:TP=-1.5:LRA=11:measured_I={js['input_i']}:measured_TP={js['input_tp']}:measured_LRA={js['input_lra']}:measured_thresh={js['input_thresh']}:offset={js['target_offset']}:linear=true"
-subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', 'renders/video.mp4', '-i', 'renders/audio/mix_samples.wav', '-map', '0:v', '-map', '1:a', '-c:v', 'copy',
+subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', A.video, '-i', 'renders/audio/mix_samples.wav', '-map', '0:v', '-map', '1:a', '-c:v', 'copy',
                 '-af', ln + ',aresample=48000', '-c:a', 'aac', '-b:a', '256k', '-movflags', '+faststart', '-shortest', A.out], check=True)
 hp = signal.butter(4, 200, 'hp', fs=SR, output='sos'); sp = speech > 0.5
 v2, b2, s2 = (rms_db(signal.sosfilt(hp, z[sp], axis=0)) for z in (vo, bed, sfx))
