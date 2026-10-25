@@ -47,10 +47,10 @@ a('impact', 'word:l19:2-0.1', -4); ticks('word:l19:4', 22, 0.105, -16); a('impac
 ticks('word:l20:0', 10, 0.1, -16); a('slide', 'word:l20:3-0.2', -6); a('impact', 'word:l20:5', -3); a('slide', 'word:l20:7', -5)
 a('riser', 'word:l21:4', -9, dur=1.4); a('boom', 'word:l21:4', -3); a('shimmer', 'word:l21:5', -5)
 # 6 SEAT SCREENS
-a('impact', 'word:l22:1', -2); a('pop', 'word:l22:6', -6); a('typing', 'word:l22:12', -12, dur=1.4); a('pop', 'word:l22:9', -8)
+a('stamp', 'word:l22:1', 0); a('impact', 'word:l22:1', -8); a('pop', 'word:l22:6', -6); a('typing', 'word:l22:12', -12, dur=1.4); a('pop', 'word:l22:9', -8)
 # 7 OPENING NIGHT
-a('slide', 'scene:s22', -4); a('pop', 'word:l23:1', -8); a('pop', 'word:l23:4', -8); a('pop', 'word:l23:5', -8)
-a('riser', 'word:l24:0', -4, dur=2.2); a('boom', 'word:l24:0', 0); a('impact', 'word:l24:0', -2); a('whoosh', 'word:l24:0+0.3', -6)
+a('curtain', 'scene:s22', -2); a('pop', 'word:l23:1', -8); a('pop', 'word:l23:4', -8); a('pop', 'word:l23:5', -8)
+a('riser', 'word:l24:0', -3); a('boom', 'word:l24:0', 0); a('curtain', 'word:l24:0-0.05', -1); a('applause', 'word:l24:0+0.2', -5)
 a('shimmer', 'word:l24:3', -4); a('pop', 'word:l24:4', -6); a('pop', 'word:l24:6', -6)
 ticks('word:l25:1', 9, 0.1); a('impact', 'word:l25:3-0.1', -3); a('pop', 'word:l25:6', -8)
 # 8 STARS · TODAY · CTA

@@ -126,12 +126,12 @@
  },
  {
   "type": "shimmer",
-  "at": "scene:s21+0.15",
+  "at": "scene:s14+0.15",
   "gain": -10
  },
  {
   "type": "shimmer",
-  "at": "scene:s14+0.15",
+  "at": "scene:s16+0.15",
   "gain": -10
  },
  {
@@ -146,17 +146,17 @@
  },
  {
   "type": "shimmer",
+  "at": "scene:s25+0.15",
+  "gain": -10
+ },
+ {
+  "type": "shimmer",
   "at": "scene:s07+0.15",
   "gain": -10
  },
  {
   "type": "shimmer",
-  "at": "scene:s16+0.15",
-  "gain": -10
- },
- {
-  "type": "shimmer",
-  "at": "scene:s25+0.15",
+  "at": "scene:s21+0.15",
   "gain": -10
  },
  {
@@ -792,9 +792,14 @@
   "gain": -5
  },
  {
+  "type": "stamp",
+  "at": "word:l22:1",
+  "gain": 0
+ },
+ {
   "type": "impact",
   "at": "word:l22:1",
-  "gain": -2
+  "gain": -8
  },
  {
   "type": "pop",
@@ -813,9 +818,9 @@
   "gain": -8
  },
  {
-  "type": "slide",
+  "type": "curtain",
   "at": "scene:s22",
-  "gain": -4
+  "gain": -2
  },
  {
   "type": "pop",
@@ -835,8 +840,7 @@
  {
   "type": "riser",
   "at": "word:l24:0",
-  "gain": -4,
-  "dur": 2.2
+  "gain": -3
  },
  {
   "type": "boom",
@@ -844,14 +848,14 @@
   "gain": 0
  },
  {
-  "type": "impact",
-  "at": "word:l24:0",
-  "gain": -2
+  "type": "curtain",
+  "at": "word:l24:0-0.05",
+  "gain": -1
  },
  {
-  "type": "whoosh",
-  "at": "word:l24:0+0.3",
-  "gain": -6
+  "type": "applause",
+  "at": "word:l24:0+0.2",
+  "gain": -5
  },
  {
   "type": "shimmer",
